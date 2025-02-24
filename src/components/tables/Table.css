@@ -66,6 +66,7 @@ table {
     background-color: white;
     border-radius: 40px;
     border: 1px solid black;
+    color: black;
   }
   
   .invite-btn:hover{

@@ -20,6 +20,7 @@ type Event = {
   startTime: string;
   endTime: string;
   createdBy: string;
+  createdByName: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -53,7 +54,7 @@ export function TableInvites({ data, onApprove, onReprove }: TableProps) {
       <tbody>
         {data?.map((invite) => (
           <tr>
-            <td>{invite.event.createdBy}</td>
+            <td>{invite.event.createdByName}</td>
             <td>{invite.event.description}</td>
             <td>{formatDateTime(invite.event.startTime)}</td>
             <td>{formatDateTime(invite.event.endTime)}</td>

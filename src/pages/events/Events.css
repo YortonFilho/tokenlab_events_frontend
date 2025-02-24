@@ -69,6 +69,8 @@ select {
   outline: none;
   transition: border-color 0.3s ease;
   margin-bottom: 12px;
+  background-color: transparent;
+  padding: 10px 10px;
 }
 
 select:focus {
@@ -78,7 +80,15 @@ select:focus {
 .input-group {
   display: flex;
   flex-direction: column;
+
 }
+
+.input-group > input[type="datetime-local"] {
+  color: #fff !important;
+  appearance: none;
+  background: #8d8d8d;
+}
+
 
 .input-group label {
   font-size: 1rem;
