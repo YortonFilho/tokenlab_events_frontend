@@ -1,0 +1,106 @@
+.events-section{
+    background-color: #111111;
+    padding: 0 80px;
+    height: 100vw;
+}
+
+.my-events{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title{
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 12px;
+}
+
+.create-event{
+    width: 120px;
+    height: 32px;
+    font-size: 0.875rem;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events {
+    position: relative;
+  }
+  
+  .event-sheet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%); /* Inicialmente escondido */
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    padding: 20px;
+  }
+  
+  .event-sheet.open {
+    transform: translateX(0); /* Quando a classe open for adicionada, o sheet aparecerá */
+  }
+  
+  .event-sheet .sheet-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group label {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .close-btn {
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .close-btn:hover {
+    background-color: #c0392b;
+  }
+  

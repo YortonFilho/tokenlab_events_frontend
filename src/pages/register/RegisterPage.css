@@ -1,0 +1,100 @@
+/*-------------------------------------------Variáveis de cores*/
+:root {
+  --main-color: rgb(86, 115, 153); 
+  --blue-900: rgb(47, 75, 112);
+  --gray-200: rgb(221, 221, 221);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-color);
+}
+
+.register-page {
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+}
+
+/*-------------------------------------------Divisória da esquerda*/
+.left-div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-div img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/*-------------------------------------------Divisória da direita*/
+.right-div {
+  width: 50%;
+  background-color: white;
+  padding: 20px;  
+  border-radius: 40px 0 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 12px;
+}
+/*-------------------------------------------Formulário de login*/
+.register-form{
+  width: 50%;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 8px;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: var(--cor-texto); 
+  margin-bottom: 5px; 
+}
+
+.input-group input { 
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--gray-200); 
+  border-radius: 4px; 
+  background-color: white; 
+}
+
+.register-btn{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 4px;
+}
+
+.register-btn:hover{
+  background-color: var(--blue-900);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.error-message{
+  color: red;
+  margin: 4px 0 0 0; 
+}

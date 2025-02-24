@@ -1,0 +1,81 @@
+table {
+    width: 100%;
+    border-spacing: 0;
+    margin-bottom: 40px;
+    border-radius: 16px; 
+    overflow: hidden; 
+    border: 1px solid white;
+  }
+  
+  th, td {
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  thead {
+    color: white; 
+  }
+  
+  tbody tr {
+    color: white;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .table-lines:hover {
+    background-color: #464646;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .edit-btn, .delete-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    display: flex;
+    gap: 4px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+
+  .invite-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: white;
+    border-radius: 40px;
+    border: 1px solid black;
+  }
+  
+  .invite-btn:hover{
+    background-color: rgb(214, 213, 213);
+  }
+
+  .not-data {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
