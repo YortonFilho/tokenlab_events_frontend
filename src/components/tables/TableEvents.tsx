@@ -3,6 +3,7 @@ import { format } from 'date-fns'
 import { Trash, Edit, Send } from 'lucide-react'
 import { useState } from 'react'
 
+// propriedades da tabela
 interface TableProps {
   data: Event[] | undefined
   onDelete: (id: string) => void
@@ -26,15 +27,18 @@ export function TableEvents({ data, onDelete, onEdit, users, createInvite }: Tab
   const [selectedUser, setSelectedUser] = useState<string | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
 
+  // função para mostrar a tela de convidar usuarios pros eventos
   const toggleInvite = (eventId: string) => {
     setSelectedEvent(eventId);
     setIsInviteOpen((prevState) => !prevState);
   };
 
+  // função para formatar a data e hora
   function formatDateTime(date: string) {
     return format(new Date(date), 'dd/MM/yyyy - HH:mm\'h\'');
   }
 
+  //função para criar convite
   const handleCreateInvite = (e: React.FormEvent) => {
     e.preventDefault();
     if (selectedUser && selectedEvent) {

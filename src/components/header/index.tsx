@@ -3,10 +3,11 @@ import './Header.css';
 import { useState, useEffect } from 'react'; 
 import { jwtDecode } from 'jwt-decode'; 
 
-// Componente funcional Header
+// Função para gerar cabeçalho com nome do usuario logado
 export function Header() {
   const [username, setUsername] = useState('')
 
+  // coleta nome do usuario
   useEffect(() => {
     const userToken = localStorage.getItem("token");
 

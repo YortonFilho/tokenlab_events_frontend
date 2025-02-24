@@ -11,16 +11,18 @@ const RegisterPage = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(''); 
   const navigate = useNavigate();
 
+  // função para enviar o formulario para criar usuario
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
     // Verifica se as senhas são iguais
     if (password !== confirmPassword) {
-      setErrorMessage("As senhas não coincidem");
+      setErrorMessage("As senhas não são iguais!");
       return;
     }
 
+    // envia requisição para api
     try {
       const response = await fetch("http://localhost:3333/users", {
         method: "POST",
@@ -33,10 +35,10 @@ const RegisterPage = () => {
       const result = await response.json();
   
       if (!response.ok) {
-        throw new Error(result.error || "Erro ao criar a sua conta");
+        throw new Error(result.error || "Erro ao criar a sua conta!");
       }
-  
-      navigate("/"); // Redireciona para a página inicial após o sucesso
+      
+      navigate("/"); 
     } catch (error: any) {
       console.error("Erro ao criar a conta:", error);
       setErrorMessage(error.message);
@@ -48,6 +50,7 @@ const RegisterPage = () => {
       <div className="left-div">
         <img src={icon} alt="Logo" />
       </div>
+      
       <div className="right-div">
         <div className="register-area">
           <h1>Cadastro</h1>

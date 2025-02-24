@@ -33,6 +33,7 @@ nav a:hover {
   color: white;
 }
 
+/*------------------------------------------------- canto do usuario */
 .user-area {
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@ nav a:hover {
   color: #bbb;
   margin-top: 0;
 }
-
+/*------------------------------------------------- foto do usuario */
 .user-photo {
   width: 40px;
   height: 40px;

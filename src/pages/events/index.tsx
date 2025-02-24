@@ -12,6 +12,7 @@ export function Events() {
   const [editEvent, setEditEvent] = useState<Event | null>(null);
   const [users, setUsers] = useState([]);
   
+  // função para mostrar a aba de criar eventos
   const toggleSheet = () => {
     setIsSheetOpen(prevState => !prevState);
     if (isSheetOpen) {
@@ -22,6 +23,7 @@ export function Events() {
     }
   };
 
+  // função para buscar todos os eventos do usuario
   const fetchEvents = () => {
     const userToken = localStorage.getItem("token");
 
@@ -32,9 +34,10 @@ export function Events() {
     })
       .then((response) => response.json())
       .then((data) => setEvents(data))
-      .catch((error) => console.error('Error fetching events:', error));
+      .catch((error) => console.error('Erro ao listar eventos!:', error));
   };
 
+  // função para editar evento
   const editEventHandler = (event: Event) => {
     setEditEvent(event);
     setDescription(event.description);
@@ -43,8 +46,10 @@ export function Events() {
     toggleSheet();
   };
 
+  // função para criar ou atualizar evento
   const createEvent = (e: React.FormEvent) => {
     e.preventDefault();
+
     const userToken = localStorage.getItem("token");
     const eventData = {
       description,
@@ -68,9 +73,10 @@ export function Events() {
         fetchEvents();
         toggleSheet();
       })
-      .catch((error) => console.error('Error creating/updating event:', error));
+      .catch((error) => console.error('Erro criar/atualizar evento:', error));
   };
 
+  // função para deletar eventos
   const deleteEvent = (id: string) => {
     const userToken = localStorage.getItem("token");
 
@@ -85,9 +91,10 @@ export function Events() {
       .then(() => {
         fetchEvents();
       })
-      .catch((error) => console.error('Error deleting event:', error));
+      .catch((error) => console.error('Erro ao deletar evento!:', error));
   };
 
+  // função para criar convite
   const createInvite = (e: React.FormEvent, eventId: string, userId: string) => {
     e.preventDefault();
     const userToken = localStorage.getItem("token");
@@ -107,14 +114,16 @@ export function Events() {
       .then(() => {
         fetchEvents();
       })
-      .catch((error) => console.error('Error creating invite', error));
+      .catch((error) => console.error('Erro ao criar convite!', error));
   };
 
+  // carrega os eventos e usuarios
   useEffect(() => {
     fetchEvents();
     fetchUsers()
   }, []);
 
+  // função para buscar todos usuarios
   const fetchUsers = () => {
     const userToken = localStorage.getItem("token");
 
@@ -125,7 +134,7 @@ export function Events() {
     })
       .then((response) => response.json())
       .then((data) => setUsers(data))
-      .catch((error) => console.error('Error fetching users:', error));
+      .catch((error) => console.error('Erro ao listar usuários:', error));
   };
 
   return (

@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 export function Invites() {
   const [invites, setInvites] = useState([]);
 
+  // função para buscar os convites do usuario
   const fetchInvites = () => {
     const userToken = localStorage.getItem("token");
 
@@ -16,13 +17,15 @@ export function Invites() {
     })
       .then((response) => response.json())
       .then((data) => setInvites(data))
-      .catch((error) => console.error('Error fetching invites:', error));
+      .catch((error) => console.error('Erro ao listar convites!:', error));
   };
 
+  // chama a função de listagem de convites
   useEffect(() => {
     fetchInvites()
   }, []);
 
+  // função para aceitar o convite
   const onApprove = (id: string) => {
     const userToken = localStorage.getItem("token");
 
@@ -36,9 +39,10 @@ export function Invites() {
       .then(() => {
         fetchInvites();
       })
-      .catch((error) => console.error('Error deleting event:', error));
+      .catch((error) => console.error('Erro ao aceitar convite!:', error));
   };
 
+  // função para recusar convite
   const onReprove = (id: string) => {
     const userToken = localStorage.getItem("token");
 
@@ -52,7 +56,7 @@ export function Invites() {
       .then(() => {
         fetchInvites();
       })
-      .catch((error) => console.error('Error deleting event:', error));
+      .catch((error) => console.error('Erro ao recusar convite!:', error));
   };
 
   return (

@@ -26,6 +26,8 @@
     justify-content: center;
 }
 
+/*---------------------------------- Aba escondida a direita para criar convites*/
+
 .events {
     position: relative;
   }
@@ -38,14 +40,14 @@
     height: 100vh;
     background-color: #fff;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    transform: translateX(100%); /* Inicialmente escondido */
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 999;
     padding: 20px;
   }
   
   .event-sheet.open {
-    transform: translateX(0); /* Quando a classe open for adicionada, o sheet aparecerá */
+    transform: translateX(0);
   }
   
   .event-sheet .sheet-content {

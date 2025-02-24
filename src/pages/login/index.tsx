@@ -10,6 +10,7 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
+  // função para enviar requisição de login para api
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null); 
@@ -24,7 +25,7 @@ const LoginPage = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Usuário ou senha inválidos");
+        throw new Error("Usuário ou senha inválidos!");
       }
 
       const result = await response.json();
@@ -33,11 +34,10 @@ const LoginPage = () => {
         localStorage.setItem('token', result.token);
         navigate("/");
       } else {
-        throw new Error('Token não recebido');
+        throw new Error('Token não recebido!');
       }
     } catch (error: any) {
-      console.error("Erro ao gerar o login", error);
-      setErrorMessage(error.message || "Erro ao fazer login"); 
+      setErrorMessage(error.message || "Erro ao fazer login!"); 
     }
   };
 
@@ -75,6 +75,7 @@ const LoginPage = () => {
                 required
               />
             </div>
+
             {errorMessage && <p className="error-message">{errorMessage}</p>} 
 
             <button type="submit" className="login-btn">Entrar</button>
@@ -83,6 +84,7 @@ const LoginPage = () => {
           <div className="register-link">
             <p>Ainda não tem uma conta? <Link to="/register">Cadastre-se</Link></p>
           </div>
+          
         </div>
       </div>
     </div>
